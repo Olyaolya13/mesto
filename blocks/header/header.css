@@ -2,7 +2,7 @@
   margin: 45px 200px 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 870px) {
   .header {
     margin: 0;
   }

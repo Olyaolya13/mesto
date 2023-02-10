@@ -6,7 +6,7 @@
   margin-bottom: 40px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 870px) {
   .header__logo {
     margin: 28px 27px 31px;
   }
@@ -16,5 +16,6 @@
   .header__logo {
     max-width: 104px;
     min-height: 24px;
+    margin: 28px 27px 31px;
   }
 }
