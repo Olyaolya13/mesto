@@ -13,3 +13,5 @@
 @import url(../blocks/content/__profile/content__profile.css);
 @import url(../blocks/content/__title/content__title.css);
 @import url(../blocks/content/subtitle/content__subtitle.css);
+@import url(../blocks/content/__edit/content__edit.css);
+@import url(../blocks/content/__name/content__name.css);

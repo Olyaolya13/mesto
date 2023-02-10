@@ -1,0 +1,4 @@
+.content__name {
+  display: flex;
+  align-items: baseline;
+}
