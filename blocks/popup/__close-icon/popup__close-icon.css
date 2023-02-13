@@ -1,11 +1,12 @@
 .popup__close-icon {
   background: url(../../../images/logo/Close\ Icon.svg) no-repeat center;
   background-size: contain;
-  width: 32px;
-  height: 32px;
+  border: none;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: -35px;
+  right: -35px;
   transition: 0.3s ease-in-out 0.1s;
 }
 
