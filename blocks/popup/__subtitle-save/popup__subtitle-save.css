@@ -6,3 +6,9 @@
   text-align: center;
   margin: 0;
 }
+
+@media (max-width: 685px) {
+  .popup__subtitle-save {
+    font-size: 14px;
+  }
+}

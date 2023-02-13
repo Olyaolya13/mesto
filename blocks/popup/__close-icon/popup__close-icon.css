@@ -14,3 +14,16 @@
   opacity: 0.6;
   cursor: pointer;
 }
+
+@media (max-width: 685px) {
+  .popup__close-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 410px) {
+  .popup__close-icon {
+    right: 0;
+  }
+}

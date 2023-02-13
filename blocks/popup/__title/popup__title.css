@@ -5,3 +5,9 @@
   margin-top: 34px;
   margin-bottom: 50px;
 }
+
+@media (max-width: 685px) {
+  .popup__title {
+    font-size: 18px;
+  }
+}

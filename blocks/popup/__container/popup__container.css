@@ -8,3 +8,10 @@
   height: 330px;
   padding-left: 40px;
 }
+
+@media (max-width: 685px) {
+  .popup__container {
+    width: 260px;
+    height: 322px;
+  }
+}
