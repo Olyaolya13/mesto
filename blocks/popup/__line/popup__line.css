@@ -1,0 +1,9 @@
+.popup__line {
+  color: #000;
+  opacity: 0.2;
+  width: 358px;
+  margin: 0 0 30px;
+}
+.popup__line:last-of-type {
+  margin-bottom: 48px;
+}
