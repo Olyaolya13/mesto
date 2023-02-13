@@ -1,6 +1,10 @@
 .content__button-edit {
   max-width: 24px;
   padding-left: 18px;
+  transition: 0.3s ease-in-out 0.1s;
+}
+.content__button-edit:hover {
+  opacity: 0.6;
 }
 
 @media (max-width: 610px) {
