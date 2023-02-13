@@ -4,4 +4,13 @@
   line-height: 1.21em;
   text-align: start;
   margin: 0 0 9px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 358px;
+  padding-bottom: 13px;
+}
+
+.popup__subtitle::placeholder {
+  color: #cec3c3;
 }
