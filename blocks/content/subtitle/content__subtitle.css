@@ -5,3 +5,16 @@
   line-height: 1.21em;
   margin-top: 8px;
 }
+
+@media (max-width: 1000px) {
+  .content__subtitle {
+    font-size: 14px;
+    line-height: 1.21em;
+  }
+}
+
+@media (max-width: 610px) {
+  .content__subtitle {
+    text-align: center;
+  }
+}

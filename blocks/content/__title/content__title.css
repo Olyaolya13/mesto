@@ -4,3 +4,17 @@
   font-weight: 500;
   line-height: 1.14em;
 }
+
+@media (max-width: 1000px) {
+  .content__title {
+    font-size: 27px;
+    line-height: 1.21em;
+  }
+}
+
+@media (max-width: 610px) {
+  .content__title {
+    margin-top: 29px;
+    margin-left: 30px;
+  }
+}
