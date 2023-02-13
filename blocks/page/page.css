@@ -10,3 +10,13 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
+
+.popup__close-icon {
+  background: url(../../images/logo/Close\ Icon.svg) no-repeat center;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
