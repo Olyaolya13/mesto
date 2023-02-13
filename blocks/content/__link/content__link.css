@@ -1,0 +1,10 @@
+.content__link {
+  align-self: baseline;
+  margin-left: 18px;
+}
+
+@media (max-width: 610px) {
+  .content__link {
+    margin-left: 11px;
+  }
+}

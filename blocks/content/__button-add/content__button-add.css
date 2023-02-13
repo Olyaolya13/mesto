@@ -1,0 +1,30 @@
+.content__button-add {
+  background: url(../../../images/logo/Add\ Button1.svg) no-repeat center;
+  background-size: contain;
+  border: none;
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  transition: 0.3s ease-in-out 0.1s;
+}
+
+.content__button-add:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (max-width: 1060px) {
+  .content__button-add {
+    margin-top: 33px;
+  }
+}
+
+@media (max-width: 670px) {
+  .content__button-add {
+    background: url(../../../images/logo/Add\ Button.svg) no-repeat center;
+    background-size: contain;
+    border: none;
+    width: 282px;
+    height: 50px;
+  }
+}

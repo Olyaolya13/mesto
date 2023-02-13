@@ -5,7 +5,7 @@
   line-height: 1.14em;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 885px) {
   .content__title {
     font-size: 27px;
     line-height: 1.21em;
