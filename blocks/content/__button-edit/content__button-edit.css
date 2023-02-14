@@ -5,6 +5,8 @@
   width: 24px;
   height: 24px;
   transition: 0.3s ease-in-out 0.1s;
+  align-self: baseline;
+  margin-left: 18px;
 }
 .content__button-edit:hover {
   opacity: 0.6;
@@ -16,5 +18,6 @@
     width: 18px;
     height: 18px;
     padding-left: 11px;
+    margin-left: 11px;
   }
 }

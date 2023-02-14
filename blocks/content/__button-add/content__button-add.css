@@ -6,6 +6,7 @@
   height: 50px;
   padding: 0;
   transition: 0.3s ease-in-out 0.1s;
+  align-self: center;
 }
 
 .content__button-add:hover {
@@ -18,6 +19,11 @@
     margin-top: 33px;
   }
 }
+@media (max-width: 870px) {
+  .content__button-add {
+    align-self: start;
+  }
+}
 
 @media (max-width: 670px) {
   .content__button-add {
@@ -26,5 +32,6 @@
     border: none;
     width: 282px;
     height: 50px;
+    align-self: center;
   }
 }

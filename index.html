@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./pages/index.js" defer></script>
   </head>
   <body class="page">
     <header class="header">
@@ -19,16 +20,13 @@
           <div class="content__edit">
             <div class="content__name">
               <h1 class="content__title">Жак-Ив Кусто</h1>
-              <a href="#" class="content__link"
-                ><button type="button" class="content__button-edit"></button
-              ></a>
+              <!--Кнопка редактирование попапа-->
+              <button type="button" class="content__button-edit"></button>
             </div>
             <p class="content__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <a href="#" class="content__link-add"
-          ><button type="button" class="content__button-add"></button
-        ></a>
+        <button type="button" class="content__button-add"></button>
       </section>
       <section class="cards">
         <div class="card">
@@ -82,11 +80,13 @@
           </div>
         </div>
       </section>
-      <section class="popup popup_opened">
+      <section class="popup">
+        <!--Фон попапа-->
         <div class="popup__container">
+          <!--Сам попап-->
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" placeholder="ФИО" class="popup__subtitle"></input>
-          <input type="text" placeholder="Должность"  class="popup__subtitle"></input>
+          <input type="text" placeholder="ФИО" class="popup__subtitle" />
+          <input type="text" placeholder="Должность" class="popup__subtitle" />
           <button type="button" class="popup__button-save">
             <p class="popup__subtitle-save">Сохранить</p>
           </button>
