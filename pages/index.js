@@ -29,3 +29,17 @@ function closePopupFunction() {
   popupOpen.classList.remove('popup_opened'); //удаляем класс для фона попапа для открытия, получая закрытие фона попапа
   popupOpenContainer.classList.remove('popup_opened'); //удаляем класс для самого попапа для открытия, получая закрытие окна попапа
 }
+
+let userName = 'Жак-Ив Кусто'; // переменная ФИО на странице
+let userJobTitle = 'Исследователь океана'; // переменная должность на странице
+
+const userNameElementWindow = document.querySelector('.content__title');
+userNameElementWindow.textContent = userName; // textContent получаем данные на странице (ФИО)
+
+const userJobTitleElemenWindow = document.querySelector('.content__subtitle');
+userJobTitleElemenWindow.textContent = userJobTitle; // textContent получаем данные на странице (Должность)
+
+const userNameEditPopup = document.querySelector('#popup__user-name');
+userNameEditPopup.value = userName; // value получаем данные в попап ФИО
+const userJobTitleEditPopup = document.querySelector('#popup__user-occupation');
+userJobTitleEditPopup.value = userJobTitle; // value получаем данные в попап Должность
