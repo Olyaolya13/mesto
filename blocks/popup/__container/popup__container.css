@@ -5,13 +5,11 @@
   background-color: #fff;
   border-radius: 10px;
   width: 400px;
-  height: 330px;
   padding-left: 40px;
 }
 
 @media (max-width: 685px) {
   .popup__container {
     width: 260px;
-    height: 322px;
   }
 }
