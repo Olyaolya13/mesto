@@ -92,18 +92,21 @@
     <div class="popup">
       <!--Фон попапа-->
       <div class="popup__container">
-        <!--Сам попап-->
+        <!--Сам попап и form - то, что мы отправляем после заполнения-->
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" placeholder="ФИО" class="popup__subtitle" id="popup__user-name" />
-        <input
-          type="text"
-          placeholder="Должность"
-          class="popup__subtitle"
-          id="popup__user-occupation"
-        />
-        <button type="button" class="popup__button-save">
-          <p class="popup__subtitle-save">Сохранить</p>
-        </button>
+        <!-- Method post - так, как вносим изменения в ресурс-->
+        <form name="userNameOccupation" method="post">
+          <input type="text" placeholder="ФИО" class="popup__subtitle" id="popup__user-name" />
+          <input
+            type="text"
+            placeholder="Должность"
+            class="popup__subtitle"
+            id="popup__user-occupation"
+          />
+          <button type="button" class="popup__button-save">
+            <p class="popup__subtitle-save">Сохранить</p>
+          </button>
+        </form>
         <div class="popup__close-icon"></div>
       </div>
     </div>
