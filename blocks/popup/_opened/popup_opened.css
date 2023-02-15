@@ -1,5 +1,7 @@
 .popup_opened {
   /*показываем попап при редактировании*/
-  opacity: 1;
-  pointer-events: all;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
