@@ -96,16 +96,21 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <!-- Method post - так, как вносим изменения в ресурс-->
         <form name="userNameOccupation" method="post">
-          <input type="text" placeholder="ФИО" class="popup__subtitle" id="popup__user-name" />
+          <input
+            type="text"
+            placeholder="ФИО"
+            name="userName"
+            class="popup__subtitle"
+            id="popup__user-name"
+          />
           <input
             type="text"
             placeholder="Должность"
+            name="userOccupation"
             class="popup__subtitle"
             id="popup__user-occupation"
           />
-          <button type="button" class="popup__button-save">
-            <p class="popup__subtitle-save">Сохранить</p>
-          </button>
+          <button type="submit" class="popup__button-save">Сохранить</button>
         </form>
         <div class="popup__close-icon"></div>
       </div>
