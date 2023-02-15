@@ -36,12 +36,15 @@ const buttonPopupSave = document.querySelector('.popup__button-save'); // пер
 buttonPopupSave.addEventListener('click', closePopupFunction); // функция закрытия для кнопки сохранения
 
 userNameEditPopup.addEventListener('input', function handleFormSubmit(event) {
+  // функция редактирования для Фио
+
   event.preventDefault();
   const value = event.target.value;
   userNameElementWindow.textContent = value;
 });
 
 userJobTitleEditPopup.addEventListener('input', function handleFormSubmit(event) {
+  // функция редактирования для Должности
   event.preventDefault();
   const value = event.target.value;
   userJobTitleElementWindow.textContent = value;
