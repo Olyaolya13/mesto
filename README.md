@@ -20,7 +20,7 @@
 **Figma**
 
 - [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A155&t=x7Kk8b8wl3skZwwK-0)
-- [Ссылка на мой макет !!! ДОБАВИТЬ]()
+- [Ссылка на мой макет](https://olyaolya13.github.io/mesto/)
 
 **Картинки**
 
