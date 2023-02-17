@@ -22,11 +22,13 @@
 @media (max-width: 685px) {
   .popup__subtitle {
     width: 238px;
+    margin-bottom: 30px;
+    padding-bottom: 9px;
   }
 }
 
 @media (max-width: 685px) {
   .popup__subtitle:last-of-type {
-    margin-bottom: 45px;
+    margin-bottom: 44px;
   }
 }

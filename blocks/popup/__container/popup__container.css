@@ -6,10 +6,12 @@
   border-radius: 10px;
   width: 400px;
   padding-left: 40px;
+  margin: 0;
 }
 
 @media (max-width: 685px) {
   .popup__container {
-    width: 260px;
+    width: 245px;
+    padding: 25px 22px 25px;
   }
 }

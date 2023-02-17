@@ -4,3 +4,10 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 410px) {
+  .popup {
+    align-items: start;
+    margin-top: 123px;
+  }
+}

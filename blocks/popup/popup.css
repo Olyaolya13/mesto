@@ -8,9 +8,3 @@
   /*убрали попап*/
   display: none;
 }
-
-@media (max-width: 410px) {
-  .popup {
-    top: -123px;
-  }
-}
