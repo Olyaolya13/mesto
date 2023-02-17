@@ -4,6 +4,10 @@
   font-weight: 400;
   line-height: 1.21em;
   margin-top: 8px;
+  /*Реализовация переполнение блока с появляющимся многоточием в конце*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 885px) {

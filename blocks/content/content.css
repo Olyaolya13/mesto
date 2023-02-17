@@ -5,28 +5,10 @@
   justify-content: space-between;
 }
 
-@media (max-width: 1060px) {
-  .content {
-    flex-direction: column;
-  }
-}
-@media (max-width: 870px) {
-  .content {
-    margin-left: 27px;
-    flex-direction: row;
-    margin-right: 27px;
-  }
-}
-
-@media (max-width: 685px) {
+@media (max-width: 1200px) {
   .content {
     flex-direction: column;
     align-items: center;
-  }
-}
-
-@media (max-width: 610px) {
-  .content {
     margin-left: auto;
     margin-right: auto;
   }
