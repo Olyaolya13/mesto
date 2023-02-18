@@ -3,24 +3,17 @@
   font-size: 42px;
   font-weight: 500;
   line-height: 1.14em;
-  width: 450px;
+  width: 300px;
   /*Реализовация переполнение блока с появляющимся многоточием в конце*/
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-@media (max-width: 1228px) {
-  .content__title {
-    width: 400px;
-  }
-}
-
 @media (max-width: 885px) {
   .content__title {
     font-size: 27px;
     line-height: 1.21em;
-    width: 300px;
   }
 }
 

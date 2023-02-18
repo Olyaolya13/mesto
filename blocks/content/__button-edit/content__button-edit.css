@@ -5,7 +5,7 @@
   width: 24px;
   height: 24px;
   transition: 0.3s ease-in-out 0.1s;
-  margin-left: 18px;
+  margin-left: 14px;
 }
 .content__button-edit:hover {
   opacity: 0.6;
