@@ -4,20 +4,34 @@
   font-weight: 400;
   line-height: 1.21em;
   margin-top: 8px;
+  width: 450px;
   /*Реализовация переполнение блока с появляющимся многоточием в конце*/
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
+@media (max-width: 1228px) {
+  .content__subtitle {
+    width: 400px;
+  }
+}
+
 @media (max-width: 885px) {
   .content__subtitle {
     font-size: 14px;
+    width: 300px;
   }
 }
 
 @media (max-width: 610px) {
   .content__subtitle {
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .content__subtitle {
+    width: 200px;
   }
 }

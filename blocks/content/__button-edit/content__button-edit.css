@@ -1,11 +1,10 @@
 .content__button-edit {
   background: url(../../../images/logo/Edit\ Button.svg) no-repeat center;
-  background-size: contain;
+  background-size: cover;
   border: none;
   width: 24px;
   height: 24px;
   transition: 0.3s ease-in-out 0.1s;
-  align-self: baseline;
   margin-left: 18px;
 }
 .content__button-edit:hover {
