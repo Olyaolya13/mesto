@@ -14,17 +14,12 @@
 @media (max-width: 885px) {
   .content__subtitle {
     font-size: 14px;
+    width: 200px;
   }
 }
 
 @media (max-width: 610px) {
   .content__subtitle {
     text-align: center;
-  }
-}
-
-@media (max-width: 400px) {
-  .content__subtitle {
-    width: 200px;
   }
 }
