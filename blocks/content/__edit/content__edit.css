@@ -3,3 +3,9 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media (max-width: 610px) {
+  .content__edit {
+    margin-top: 29px;
+  }
+}
