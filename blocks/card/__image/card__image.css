@@ -3,3 +3,8 @@
   height: 280px;
   object-fit: cover;
 }
+
+.card__image_barcelona {
+  background: url(../../../images/Barcelona_Spain.jpg) no-repeat center;
+  background-size: cover;
+}
