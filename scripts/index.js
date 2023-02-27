@@ -88,3 +88,17 @@ initialCards.forEach(function (element) {
 </article>
   cardsSection.append(cardTemplate);
 </template> */
+
+const openAddCardPopup = document.querySelector(".popup__card-add");
+const addCardButtonEditPopup = document.querySelector(".content__button-add");
+const closeAddCardPopup = document.querySelector(".popup__close_add-card");
+
+function openAddCardPopupFunction() {
+  openAddCardPopup.classList.add("popup_opened");
+}
+addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
+
+function closeAddCardPopupFunction() {
+  openAddCardPopup.classList.remove("popup_opened");
+}
+closeAddCardPopup.addEventListener("click", closeAddCardPopupFunction); // закрытие попапа для добавления карточек
