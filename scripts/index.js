@@ -29,3 +29,62 @@ function handleFormSubmit(event) {
   closePopupFunction(); //вызвали повтороно функцию закрытия попапа
 }
 formElement.addEventListener("submit", handleFormSubmit); // действие сохранения формы попапа
+
+const initialCards = [
+  {
+    name: "Япония",
+    link: "https://images.unsplash.com/photo-1677350787420-d3309b8a1eb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+    alt: "Стрит арт Япония",
+  },
+  {
+    name: "Великобритания",
+    link: "https://images.unsplash.com/photo-1517776832751-0a7e6993de03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+    alt: "Стрит арт Великобритания",
+  },
+  {
+    name: "Германия",
+    link: "https://images.unsplash.com/photo-1487452066049-a710f7296400?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80",
+    alt: "Стрит арт Германия",
+  },
+  {
+    name: "Польша",
+    link: "https://images.unsplash.com/photo-1551961761-c786d7587b94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
+    alt: "Стрит арт Польша",
+  },
+  {
+    name: "Латвия",
+    link: "https://images.unsplash.com/photo-1554313595-4e7325a1256a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+    alt: "Стрит арт Латвия",
+  },
+  {
+    name: "Стрит арт США",
+    link: "https://images.unsplash.com/photo-1538591342826-9ad43007c016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=954&q=80",
+    alt: "США",
+  },
+];
+
+const cardsSection = document.querySelector(".cards"); // обращаемся к секции cards
+
+initialCards.forEach(function (element) {
+  //перебираем каждую карточку
+  const cardTemplate = document
+    .getElementById("card-template")
+    .content.cloneNode(true); //получаем содержимое template через content и клонируем, получаем 6 карточек
+  const cardNameTitle = cardTemplate.querySelector(".card__title"); // обращаемся к заголовку карточки в ранее полученном содержимом template
+  cardNameTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
+  const cardLinkImage = cardTemplate.querySelector(".card__image"); //обращаемся к картинке карточки в ранее полученном содержимом template
+  cardLinkImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
+  cardLinkImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
+  cardsSection.append(cardTemplate);
+});
+
+/* <template id="card-template">
+<article class="card">
+<img src="#" alt="#" class="card__image" />
+<div class="card__text">
+  <h2 class="card__title"></h2>
+  <button type="button" class="card__heart"></button>
+</div>
+</article>
+  cardsSection.append(cardTemplate);
+</template> */

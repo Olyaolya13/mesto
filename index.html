@@ -44,74 +44,7 @@
           class="content__button-add"
         ></button>
       </section>
-      <section class="cards">
-        <article class="card">
-          <img
-            src="./images/Barcelona_Spain.jpg"
-            alt="Барселона, Испания"
-            class="card__image"
-          />
-          <div class="card__text">
-            <h2 class="card__title">Барселона, Испания</h2>
-            <button type="button" class="card__heart"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="./images/Chicago_USA.jpg"
-            alt="Чикаго,США"
-            class="card__image"
-          />
-          <div class="card__text">
-            <h2 class="card__title">Чикаго, США</h2>
-            <button type="button" class="card__heart"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="./images/koreya.jpg"
-            alt="Сеул, Южная Корея"
-            class="card__image"
-          />
-          <div class="card__text">
-            <h2 class="card__title">Сеул, Южная Корея</h2>
-            <button type="button" class="card__heart"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="./images/Montenegro.jpg"
-            alt="Будва, Черногория"
-            class="card__image"
-          />
-          <div class="card__text">
-            <h2 class="card__title">Будва, Черногория</h2>
-            <button type="button" class="card__heart"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="./images/Moscow_Russia.jpg"
-            alt="Москва, Россия"
-            class="card__image"
-          />
-          <div class="card__text">
-            <h2 class="card__title">Москва, Россия</h2>
-            <button type="button" class="card__heart"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="./images/Tokyo_Japan.jpg"
-            alt="Токио, Япония"
-            class="card__image"
-          />
-          <div class="card__text">
-            <h2 class="card__title">Токио, Япония</h2>
-            <button type="button" class="card__heart"></button>
-          </div>
-        </article>
-      </section>
+      <section class="cards"></section>
     </main>
     <footer class="footer">
       <p class="footer__text">&copy; 2022 Mesto Russia</p>
@@ -152,5 +85,14 @@
         ></button>
       </div>
     </div>
+    <template id="card-template">
+      <article class="card">
+        <img src="" alt="" class="card__image" />
+        <div class="card__text">
+          <span class="card__title"></span>
+          <button type="button" class="card__heart"></button>
+        </div>
+      </article>
+    </template>
   </body>
 </html>
