@@ -8,26 +8,26 @@ const jobInput = document.querySelector("#popup__user-occupation"); // пере�
 const formElement = document.querySelector(".popup__form"); // переменная формы попапа
 
 //функция для открытия попапа редактирования ФИО и должность
-function openPopupFunction() {
+const openPopupFunction = () => {
   nameInput.value = userNameElementWindow.textContent;
   jobInput.value = userJobTitleElementWindow.textContent;
   popupOpen.classList.add("popup_opened");
-}
+};
 buttonEditPopup.addEventListener("click", openPopupFunction);
 
 //функция для закрытия попапа редактирования ФИО и должность
-function closePopupFunction() {
+const closePopupFunction = () => {
   popupOpen.classList.remove("popup_opened");
-}
+};
 buttonClosePopup.addEventListener("click", closePopupFunction);
 
 //функция для сохранения значений с попапа и перенос в окно
-function handleFormSubmit(event) {
+const handleFormSubmit = (event) => {
   event.preventDefault();
   userNameElementWindow.textContent = nameInput.value;
   userJobTitleElementWindow.textContent = jobInput.value;
   closePopupFunction(); //вызвали повтороно функцию закрытия попапа
-}
+};
 formElement.addEventListener("submit", handleFormSubmit); // действие сохранения формы попапа
 
 //переменная с массивом карточек
@@ -65,11 +65,29 @@ const initialCards = [
   },
 ];
 
+// открытие попапа для карточек
+const openAddCardPopup = document.querySelector(".popup__card-add"); //открытие попапа для карточек
+const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
+
+const openAddCardPopupFunction = () => {
+  openAddCardPopup.classList.add("popup_opened");
+  formElementCard.reset(); // удаление данных из формы
+};
+addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
+
+// закрытие попапа для карточек
+const closeAddCardPopup = document.querySelector(".popup__close_add-card"); //кнопка для закрытия попапа для карточек
+
+const closeAddCardPopupFunction = () => {
+  openAddCardPopup.classList.remove("popup_opened");
+};
+closeAddCardPopup.addEventListener("click", closeAddCardPopupFunction); // закрытие попапа для добавления карточек
+
 const cardsSection = document.querySelector(".cards"); // переменная секции карточки
 const formElementCard = document.querySelector(".popup__form-card"); //форма попапа для карточки
 
 // функция для создания карточек, их перебора массива
-function createNewCard(element) {
+const createNewCard = (element) => {
   const cardTemplate = document
     .getElementById("card-template")
     .content.cloneNode(true); //получаем содержимое template через content и клонируем
@@ -78,39 +96,32 @@ function createNewCard(element) {
   cardNameTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
   cardLinkImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
   cardLinkImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
+  // удаление карточки
+  const removeCard = cardTemplate.querySelector(".card__delete"); // кнопка корзина для удаления
+  removeCard.addEventListener("click", handleRemoveCardClick); // действие для удаления карточки для всех
   cardsSection.prepend(cardTemplate); // добавление карточек вначале секции cards
-}
+};
+
+// удаление карточки
+const handleRemoveCardClick = (event) => {
+  const clickButton = event.target; // ссылаемся на событие для кнопки
+  const deleteCard = clickButton.closest(".card"); // ищем на стр класс card
+  deleteCard.remove(); // удаляем класс
+};
+
 initialCards.forEach(createNewCard);
 
-// открытие попапа для карточек
-const openAddCardPopup = document.querySelector(".popup__card-add"); //открытие попапа для карточек
-const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
-
-function openAddCardPopupFunction() {
-  openAddCardPopup.classList.add("popup_opened");
-  formElementCard.reset(); // удаление данных из формы
-}
-
-addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
-
-// закрытие попапа для карточек
-const closeAddCardPopup = document.querySelector(".popup__close_add-card"); //кнопка для закрытия попапа для карточек
-
-function closeAddCardPopupFunction() {
-  openAddCardPopup.classList.remove("popup_opened");
-}
-closeAddCardPopup.addEventListener("click", closeAddCardPopupFunction); // закрытие попапа для добавления карточек
-
 // добавление новых карточек
-function addNewCard(event) {
+const handleAddNewCardClick = (event) => {
   event.preventDefault();
   const linkAddCard = document.querySelector(".popup__card-link").value; // изображение в карточке
   const nameAddCard = document.querySelector(".popup__card-name").value; // название карточки
   const newCard = {
     name: nameAddCard,
+    alt: nameAddCard,
     link: linkAddCard,
   };
   createNewCard(newCard);
   closeAddCardPopupFunction(); //вызвали повтороно функцию закрытия попапа
-}
-formElementCard.addEventListener("submit", addNewCard); //действие сохранения формы попапа
+};
+formElementCard.addEventListener("submit", handleAddNewCardClick); //действие сохранения формы попапа
