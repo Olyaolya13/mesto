@@ -7,21 +7,22 @@ const nameInput = document.querySelector("#popup__user-name"); // перемен
 const jobInput = document.querySelector("#popup__user-occupation"); // переменная Должность в попапе
 const formElement = document.querySelector(".popup__form"); // переменная формы попапа
 
+//функция для открытия попапа редактирования ФИО и должность
 function openPopupFunction() {
-  //функция для открытия кнокпки редактирования со значениями окна
-  nameInput.value = userNameElementWindow.textContent; // значения в попапе value берем с окна textContent
+  nameInput.value = userNameElementWindow.textContent;
   jobInput.value = userJobTitleElementWindow.textContent;
   popupOpen.classList.add("popup_opened");
 }
-buttonEditPopup.addEventListener("click", openPopupFunction); // действие клика при окрытии редактирования попапа
+buttonEditPopup.addEventListener("click", openPopupFunction);
 
+//функция для закрытия попапа редактирования ФИО и должность
 function closePopupFunction() {
-  popupOpen.classList.remove("popup_opened"); //удаляем класс для  попапа для открытия, получая закрытие попапа
+  popupOpen.classList.remove("popup_opened");
 }
-buttonClosePopup.addEventListener("click", closePopupFunction); // действие клика при закрытии редактирования попапа
+buttonClosePopup.addEventListener("click", closePopupFunction);
 
+//функция для сохранения значений с попапа и перенос в окно
 function handleFormSubmit(event) {
-  //функция для сохранения значений с попапа и перенос в окно
   event.preventDefault();
   userNameElementWindow.textContent = nameInput.value;
   userJobTitleElementWindow.textContent = jobInput.value;
@@ -29,6 +30,7 @@ function handleFormSubmit(event) {
 }
 formElement.addEventListener("submit", handleFormSubmit); // действие сохранения формы попапа
 
+//переменная с массивом карточек
 const initialCards = [
   {
     name: "Япония",
@@ -46,9 +48,9 @@ const initialCards = [
     alt: "Стрит арт Германия",
   },
   {
-    name: "Польша",
-    link: "https://images.unsplash.com/photo-1551961761-c786d7587b94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
-    alt: "Стрит арт Польша",
+    name: "Австралия",
+    link: "https://images.unsplash.com/photo-1530406831759-15c5c0cbce8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80",
+    alt: "Стрит арт Австралия",
   },
 
   {
@@ -57,14 +59,16 @@ const initialCards = [
     alt: "Стрит арт США",
   },
   {
-    name: "Латвия",
-    link: "https://images.unsplash.com/photo-1554313595-4e7325a1256a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-    alt: "Стрит арт Латвия",
+    name: "Бельгия",
+    link: "https://images.unsplash.com/photo-1564385479952-4cc4a28234a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+    alt: "Стрит арт Бельгия",
   },
 ];
 
-const cardsSection = document.querySelector(".cards"); // обращаемся к секции cards
+const cardsSection = document.querySelector(".cards"); // переменная секции карточки
+const formElementCard = document.querySelector(".popup__form-card"); //форма попапа для карточки
 
+// функция для создания карточек, их перебора массива
 function createNewCard(element) {
   const cardTemplate = document
     .getElementById("card-template")
@@ -74,19 +78,22 @@ function createNewCard(element) {
   cardNameTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
   cardLinkImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
   cardLinkImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
-  cardsSection.prepend(cardTemplate);
+  cardsSection.prepend(cardTemplate); // добавление карточек вначале секции cards
 }
+initialCards.forEach(createNewCard);
 
-initialCards.forEach(createNewCard); // для каждой карточки
-
+// открытие попапа для карточек
 const openAddCardPopup = document.querySelector(".popup__card-add"); //открытие попапа для карточек
 const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
 
 function openAddCardPopupFunction() {
   openAddCardPopup.classList.add("popup_opened");
+  formElementCard.reset(); // удаление данных из формы
 }
+
 addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
 
+// закрытие попапа для карточек
 const closeAddCardPopup = document.querySelector(".popup__close_add-card"); //кнопка для закрытия попапа для карточек
 
 function closeAddCardPopupFunction() {
@@ -94,10 +101,8 @@ function closeAddCardPopupFunction() {
 }
 closeAddCardPopup.addEventListener("click", closeAddCardPopupFunction); // закрытие попапа для добавления карточек
 
-const formElementCard = document.querySelector(".popup__form-card"); //форма попапа для карточки
-
+// добавление новых карточек
 function addNewCard(event) {
-  //функция для сохранения новых карточек
   event.preventDefault();
   const linkAddCard = document.querySelector(".popup__card-link").value; // изображение в карточке
   const nameAddCard = document.querySelector(".popup__card-name").value; // название карточки
