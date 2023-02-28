@@ -5,6 +5,7 @@ const userNameElementWindow = document.querySelector(".content__title"); // пе
 const userJobTitleElementWindow = document.querySelector(".content__subtitle"); // переменная Должность в окне
 const nameInput = document.querySelector("#popup__user-name"); // переменная ФИО в попапе
 const jobInput = document.querySelector("#popup__user-occupation"); // переменная Должность в попапе
+const formElement = document.querySelector(".popup__form"); // переменная формы попапа
 
 function openPopupFunction() {
   //функция для открытия кнокпки редактирования со значениями окна
@@ -18,8 +19,6 @@ function closePopupFunction() {
   popupOpen.classList.remove("popup_opened"); //удаляем класс для  попапа для открытия, получая закрытие попапа
 }
 buttonClosePopup.addEventListener("click", closePopupFunction); // действие клика при закрытии редактирования попапа
-
-const formElement = document.querySelector(".popup__form"); // переменная формы попапа
 
 function handleFormSubmit(event) {
   //функция для сохранения значений с попапа и перенос в окно
@@ -51,54 +50,62 @@ const initialCards = [
     link: "https://images.unsplash.com/photo-1551961761-c786d7587b94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
     alt: "Стрит арт Польша",
   },
+
+  {
+    name: "США",
+    link: "https://images.unsplash.com/photo-1538591342826-9ad43007c016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=954&q=80",
+    alt: "Стрит арт США",
+  },
   {
     name: "Латвия",
     link: "https://images.unsplash.com/photo-1554313595-4e7325a1256a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     alt: "Стрит арт Латвия",
   },
-  {
-    name: "Стрит арт США",
-    link: "https://images.unsplash.com/photo-1538591342826-9ad43007c016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=954&q=80",
-    alt: "США",
-  },
 ];
 
 const cardsSection = document.querySelector(".cards"); // обращаемся к секции cards
 
-initialCards.forEach(function (element) {
-  //перебираем каждую карточку
+function createNewCard(element) {
   const cardTemplate = document
     .getElementById("card-template")
-    .content.cloneNode(true); //получаем содержимое template через content и клонируем, получаем 6 карточек
+    .content.cloneNode(true); //получаем содержимое template через content и клонируем
   const cardNameTitle = cardTemplate.querySelector(".card__title"); // обращаемся к заголовку карточки в ранее полученном содержимом template
-  cardNameTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
   const cardLinkImage = cardTemplate.querySelector(".card__image"); //обращаемся к картинке карточки в ранее полученном содержимом template
+  cardNameTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
   cardLinkImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
   cardLinkImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
-  cardsSection.append(cardTemplate);
-});
+  cardsSection.prepend(cardTemplate);
+}
 
-/* <template id="card-template">
-<article class="card">
-<img src="#" alt="#" class="card__image" />
-<div class="card__text">
-  <h2 class="card__title"></h2>
-  <button type="button" class="card__heart"></button>
-</div>
-</article>
-  cardsSection.append(cardTemplate);
-</template> */
+initialCards.forEach(createNewCard); // для каждой карточки
 
-const openAddCardPopup = document.querySelector(".popup__card-add");
-const addCardButtonEditPopup = document.querySelector(".content__button-add");
-const closeAddCardPopup = document.querySelector(".popup__close_add-card");
+const openAddCardPopup = document.querySelector(".popup__card-add"); //открытие попапа для карточек
+const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
 
 function openAddCardPopupFunction() {
   openAddCardPopup.classList.add("popup_opened");
 }
 addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
 
+const closeAddCardPopup = document.querySelector(".popup__close_add-card"); //кнопка для закрытия попапа для карточек
+
 function closeAddCardPopupFunction() {
   openAddCardPopup.classList.remove("popup_opened");
 }
 closeAddCardPopup.addEventListener("click", closeAddCardPopupFunction); // закрытие попапа для добавления карточек
+
+const formElementCard = document.querySelector(".popup__form-card"); //форма попапа для карточки
+
+function addNewCard(event) {
+  //функция для сохранения новых карточек
+  event.preventDefault();
+  const linkAddCard = document.querySelector(".popup__card-link").value; // изображение в карточке
+  const nameAddCard = document.querySelector(".popup__card-name").value; // название карточки
+  const newCard = {
+    name: nameAddCard,
+    link: linkAddCard,
+  };
+  createNewCard(newCard);
+  closeAddCardPopupFunction(); //вызвали повтороно функцию закрытия попапа
+}
+formElementCard.addEventListener("submit", addNewCard); //действие сохранения формы попапа

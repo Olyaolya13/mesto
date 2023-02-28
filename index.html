@@ -91,19 +91,23 @@
         <!--Сам попап и form - то, что мы отправляем после заполнения-->
         <h2 class="popup__title popup__title-card">Новое место</h2>
         <!-- Method post - так, как вносим изменения в ресурс-->
-        <form name="cardNewImages" method="post" class="popup__form">
+        <form
+          name="cardNewImages"
+          method="post"
+          class="popup__form popup__form-card"
+        >
           <input
             type="text"
             placeholder="Название"
             name="cardName"
-            class="popup__subtitle popup__new-card"
+            class="popup__subtitle popup__card-name"
             id="popup__card-name"
           />
           <input
             type="text"
             placeholder="Ссылка на картинку"
             name="cardLink"
-            class="popup__subtitle popup__new-link"
+            class="popup__subtitle popup__card-link"
             id="popup__card-link"
           /><button
             type="submit"
