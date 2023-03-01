@@ -98,7 +98,10 @@ const createNewCard = (element) => {
   cardLinkImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
   // удаление карточки
   const removeCard = cardTemplate.querySelector(".card__delete"); // кнопка корзина для удаления
-  removeCard.addEventListener("click", handleRemoveCardClick); // действие для удаления карточки для всех
+  removeCard.addEventListener("click", handleRemoveCardClick); // действие для удаления карточкек
+  cardTemplate
+    .querySelector(".card__heart")
+    .addEventListener("click", handleclickHeartButtonActive); // действие для лайка карточкек
   cardsSection.prepend(cardTemplate); // добавление карточек вначале секции cards
 };
 
@@ -109,6 +112,17 @@ const handleRemoveCardClick = (event) => {
   deleteCard.remove(); // удаляем класс
 };
 
+// лайк для карточек
+const handleclickHeartButtonActive = (event) => {
+  const clickHeartButton = event.target; // ссылаемся на событие для кнопки
+  if (clickHeartButton.classList.contains("card__heart")) {
+    clickHeartButton.classList.remove("card__heart");
+    clickHeartButton.classList.add("card__heart_active");
+  } else {
+    clickHeartButton.classList.remove("card__heart_active");
+    clickHeartButton.classList.add("card__heart");
+  }
+};
 initialCards.forEach(createNewCard);
 
 // добавление новых карточек

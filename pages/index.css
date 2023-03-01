@@ -14,6 +14,7 @@
 @import url(../blocks/content/__subtitle/content__subtitle.css);
 @import url(../blocks/content/__edit/content__edit.css);
 @import url(../blocks/content/__name/content__name.css);
+@import url(../blocks/card/__heart/_active/card__heart_active.css);
 /*cards*/
 @import url(../blocks/cards/cards.css);
 /*card*/
