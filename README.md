@@ -9,17 +9,20 @@
 **Интро**
 
 Проект Место от Яндекс Практикума.
-Практика написания модального окна, возможность его редактирования.
+Практика написания модального окна, возможность его редактирования, добавление URL картинок и их полномаштабное открытие, плавное открытие всех модальных окон и картинок.
+
 Используемые технологии:
 
 - HTML5
 - CSS3
 - Grid
+- Flex
 - JS
 
 **Figma**
 
 - [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A155&t=x7Kk8b8wl3skZwwK-0)
+- [Ссылка на макет в Figma продолжение](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=50160%3A110&t=yvzeCwViPwWnbwwZ-0)
 - [Ссылка на мой макет](https://olyaolya13.github.io/mesto/)
 
 **Картинки**
@@ -30,10 +33,5 @@
 - [Edit button](https://github.com/Olyaolya13/mesto/blob/main/images/logo/Edit%20Button.svg)
 - [Heart](https://github.com/Olyaolya13/mesto/blob/main/images/logo/heart.svg)
 - [Logo mesto](https://github.com/Olyaolya13/mesto/blob/main/images/logo/logo.svg)
-- [Spain](https://github.com/Olyaolya13/mesto/blob/main/images/Casa%20Batll%C3%B3%2C%20Passeig%20de%20Gr%C3%A0cia%2C%20Barcelona%2C%20Spain.jpg)
-- [USA](https://github.com/Olyaolya13/mesto/blob/main/images/Chicago%2C%20Chicago%2C%20United%20States.jpg)
-- [Avatar](https://github.com/Olyaolya13/mesto/blob/main/images/JacIvKusto.jpg)
-- [Montenegro](https://github.com/Olyaolya13/mesto/blob/main/images/Montenegro.jpg)
-- [Russia](https://github.com/Olyaolya13/mesto/blob/main/images/Moscow%20Russia.jpg)
-- [Japan](https://github.com/Olyaolya13/mesto/blob/main/images/Tokyo%2C%20Japan.jpg)
-- [Korey](https://github.com/Olyaolya13/mesto/blob/main/images/koreya.jpg)
+- [Trash](https://github.com/Olyaolya13/mesto/blob/main/images/logo/Trash.svg)
+- [Black heart](https://github.com/Olyaolya13/mesto/blob/main/images/logo/black_heart.svg)
