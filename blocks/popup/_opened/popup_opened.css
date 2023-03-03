@@ -1,4 +1,5 @@
 .popup_opened {
-  /*показываем попап при редактировании*/
-  display: flex;
+  /*показываем попап*/
+  visibility: visible;
+  opacity: 1;
 }
