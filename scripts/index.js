@@ -76,7 +76,7 @@ const openAddCardPopupFunction = () => {
 addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
 
 // закрытие попапа для карточек
-const closeAddCardPopup = document.querySelector(".popup__close_add-card"); //кнопка для закрытия попапа для карточек
+const closeAddCardPopup = document.querySelector(".popup__close-card"); //кнопка для закрытия попапа для карточек
 const closeAddCardPopupFunction = () => {
   openAddCardPopup.classList.remove("popup_opened");
 };
@@ -106,9 +106,8 @@ const createNewCard = (element) => {
     .querySelector(".card__image")
     .addEventListener("click", handleOpenZoomCard);
   //закрытие полномаштабной картинки
-  const closeButtonOpenPopupImage = document.querySelector(
-    ".popup__close_zoom-image"
-  );
+  const closeButtonOpenPopupImage =
+    document.querySelector(".popup__close-zoom");
   closeButtonOpenPopupImage.addEventListener(
     "click",
     closeOpenPopupImageFunction
