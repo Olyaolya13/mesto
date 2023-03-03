@@ -50,7 +50,7 @@
       <p class="footer__text">&copy; 2022 Mesto Russia</p>
     </footer>
     <!--Скрытый контент размещаем после footer-->
-    <div class="popup">
+    <div class="popup popup__user-information">
       <!--Фон попапа-->
       <div class="popup__container">
         <!--Сам попап и form - то, что мы отправляем после заполнения-->
@@ -125,14 +125,14 @@
       </div>
     </div>
     <!--Увелечение картинки-->
-    <div class="popup__open-container popup__open-image">
-      <div class="popup__close_open">
-        <img src="#" class="popup__image" alt="#" />
-        <h2 class="popup__image-text"></h2>
+    <div class="popup popup__zoom">
+      <div class="popup__zoom-container">
+        <img src="#" class="popup__zoom-image" alt="#" />
+        <h2 class="popup__zoom-image-text"></h2>
         <button
           type="button"
           aria-label="Закрыть"
-          class="popup__close-icon popup__close_open-image"
+          class="popup__close-icon popup__close_zoom-image"
         ></button>
       </div>
     </div>

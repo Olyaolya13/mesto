@@ -101,17 +101,13 @@ const createNewCard = (element) => {
   cardTemplate
     .querySelector(".card__heart")
     .addEventListener("click", handleclickHeartButtonActive);
-  //
-  cardTemplate
-    .querySelector(".card__image")
-    .addEventListener("click", openCard);
   // открытие полномаштабной картинки
   cardTemplate
     .querySelector(".card__image")
-    .addEventListener("click", openPhotoFunction);
+    .addEventListener("click", handleOpenZoomCard);
   //закрытие полномаштабной картинки
   const closeButtonOpenPopupImage = document.querySelector(
-    ".popup__close_open-image"
+    ".popup__close_zoom-image"
   );
   closeButtonOpenPopupImage.addEventListener(
     "click",
@@ -121,19 +117,21 @@ const createNewCard = (element) => {
   cardsSection.prepend(cardTemplate); // добавление карточек вначале секции cards
 };
 
-// функции для закрытия и открытия полномаштабной картинки
-const openpopup = document.querySelector(".popup__open-container"); // попап для полномаштабной картинки
-const openPhotoFunction = () => {
-  openpopup.classList.add("popup_opened");
+// открытие полномаштабной картинки
+const openZoomPopup = document.querySelector(".popup__zoom"); // попап для полномаштабной картинки
+
+const handleOpenZoomCard = (event) => {
+  const popupZoomPhoto = document.querySelector(".popup__zoom-image");
+  const namePopupZoomPhotoText = document.querySelector(
+    ".popup__zoom-image-text"
+  );
+  popupZoomPhoto.src = event.target.src; // передаем в попап картинки значение src
+  namePopupZoomPhotoText.textContent = event.target.alt; // передаем в попап картинки значение alt
+  openZoomPopup.classList.add("popup_opened");
 };
+// закрытие полномаштабной картинки
 const closeOpenPopupImageFunction = () => {
-  openpopup.classList.remove("popup_opened");
-};
-const openCard = (event) => {
-  const foto = document.querySelector(".popup__image");
-  const nametext = document.querySelector(".popup__image-text");
-  foto.src = event.target.src;
-  nametext.textContent = event.target.alt; // попапа для увелечения карточек
+  openZoomPopup.classList.remove("popup_opened");
 };
 
 // удаление карточки
