@@ -1,6 +1,6 @@
 .content__button-edit {
   background: url(../../../images/logo/Edit\ Button.svg) no-repeat center;
-  background-size: cover;
+  background-size: contain;
   border: none;
   width: 24px;
   height: 24px;
