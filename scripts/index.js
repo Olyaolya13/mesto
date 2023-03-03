@@ -66,7 +66,7 @@ const initialCards = [
 ];
 
 // открытие попапа для карточек
-const openAddCardPopup = document.querySelector(".popup__card-add"); //открытие попапа для карточек
+const openAddCardPopup = document.querySelector(".popup__add-card"); //открытие попапа для карточек
 const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
 
 const openAddCardPopupFunction = () => {
