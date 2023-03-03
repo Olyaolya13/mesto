@@ -1,0 +1,38 @@
+.popup__open-container {
+  position: relative;
+}
+
+.popup__image {
+  object-fit: contain;
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+.popup__image-text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.21em;
+  margin-top: 10px;
+}
+
+.popup__close_open {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+}
+
+.popup__open-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  /*убрали попап*/
+  display: none;
+  justify-content: center;
+  align-items: center;
+}

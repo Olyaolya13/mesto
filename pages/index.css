@@ -15,6 +15,7 @@
 @import url(../blocks/content/__edit/content__edit.css);
 @import url(../blocks/content/__name/content__name.css);
 @import url(../blocks/card/__heart/_active/card__heart_active.css);
+@import url(../blocks/popup/__image-zoom/popup__image-zoom.css);
 /*cards*/
 @import url(../blocks/cards/cards.css);
 /*card*/

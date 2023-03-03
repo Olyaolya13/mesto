@@ -77,7 +77,6 @@ addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // �
 
 // закрытие попапа для карточек
 const closeAddCardPopup = document.querySelector(".popup__close_add-card"); //кнопка для закрытия попапа для карточек
-
 const closeAddCardPopupFunction = () => {
   openAddCardPopup.classList.remove("popup_opened");
 };
@@ -91,18 +90,50 @@ const createNewCard = (element) => {
   const cardTemplate = document
     .getElementById("card-template")
     .content.cloneNode(true); //получаем содержимое template через content и клонируем
-  const cardNameTitle = cardTemplate.querySelector(".card__title"); // обращаемся к заголовку карточки в ранее полученном содержимом template
-  const cardLinkImage = cardTemplate.querySelector(".card__image"); //обращаемся к картинке карточки в ранее полученном содержимом template
-  cardNameTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
-  cardLinkImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
-  cardLinkImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
-  // удаление карточки
-  const removeCard = cardTemplate.querySelector(".card__delete"); // кнопка корзина для удаления
-  removeCard.addEventListener("click", handleRemoveCardClick); // действие для удаления карточкек
+  cardTemplate.querySelector(".card__title").textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
+  cardTemplate.querySelector(".card__image").setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
+  cardTemplate.querySelector(".card__image").setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
+  // действие для удаления карточкек
+  cardTemplate
+    .querySelector(".card__delete")
+    .addEventListener("click", handleRemoveCardClick);
+  // действие для лайка карточкек
   cardTemplate
     .querySelector(".card__heart")
-    .addEventListener("click", handleclickHeartButtonActive); // действие для лайка карточкек
+    .addEventListener("click", handleclickHeartButtonActive);
+  //
+  cardTemplate
+    .querySelector(".card__image")
+    .addEventListener("click", openCard);
+  // открытие полномаштабной картинки
+  cardTemplate
+    .querySelector(".card__image")
+    .addEventListener("click", openPhotoFunction);
+  //закрытие полномаштабной картинки
+  const closeButtonOpenPopupImage = document.querySelector(
+    ".popup__close_open-image"
+  );
+  closeButtonOpenPopupImage.addEventListener(
+    "click",
+    closeOpenPopupImageFunction
+  );
+
   cardsSection.prepend(cardTemplate); // добавление карточек вначале секции cards
+};
+
+// функции для закрытия и открытия полномаштабной картинки
+const openpopup = document.querySelector(".popup__open-container"); // попап для полномаштабной картинки
+const openPhotoFunction = () => {
+  openpopup.classList.add("popup_opened");
+};
+const closeOpenPopupImageFunction = () => {
+  openpopup.classList.remove("popup_opened");
+};
+const openCard = (event) => {
+  const foto = document.querySelector(".popup__image");
+  const nametext = document.querySelector(".popup__image-text");
+  foto.src = event.target.src;
+  nametext.textContent = event.target.alt; // попапа для увелечения карточек
 };
 
 // удаление карточки
@@ -123,6 +154,7 @@ const handleclickHeartButtonActive = (event) => {
     clickHeartButton.classList.add("card__heart");
   }
 };
+
 initialCards.forEach(createNewCard);
 
 // добавление новых карточек
@@ -138,4 +170,4 @@ const handleAddNewCardClick = (event) => {
   createNewCard(newCard);
   closeAddCardPopupFunction(); //вызвали повтороно функцию закрытия попапа
 };
-formElementCard.addEventListener("submit", handleAddNewCardClick); //действие сохранения формы попапа
+formElementCard.addEventListener("submit", handleAddNewCardClick);
