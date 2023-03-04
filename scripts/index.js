@@ -1,4 +1,5 @@
-const popupOpen = document.querySelector(".popup"); //переменная окна попапа
+const profilePopup = document.querySelector(".profile-popup");
+console.log(profilePopup); //переменная окна попапа
 const buttonEditPopup = document.querySelector(".content__button-edit"); // переменная кнопки для редактирования и открытия попапа
 const buttonClosePopup = document.querySelector(".popup__close-icon"); // переменная кнопки для закрытия попапа (крестик)
 const userNameElementWindow = document.querySelector(".content__title"); // переменная ФИО в окне
@@ -11,13 +12,13 @@ const formElement = document.querySelector(".popup__form"); // переменн�
 const openPopupFunction = () => {
   nameInput.value = userNameElementWindow.textContent;
   jobInput.value = userJobTitleElementWindow.textContent;
-  popupOpen.classList.add("popup_opened");
+  profilePopup.classList.add("popup_opened");
 };
 buttonEditPopup.addEventListener("click", openPopupFunction);
 
 //функция для закрытия попапа редактирования ФИО и должность
 const closePopupFunction = () => {
-  popupOpen.classList.remove("popup_opened");
+  profilePopup.classList.remove("popup_opened");
 };
 buttonClosePopup.addEventListener("click", closePopupFunction);
 

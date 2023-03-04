@@ -18,7 +18,6 @@
 @import url(../blocks/popup/__zoom-image/popup__zoom-image.css);
 @import url(../blocks/popup/__zoom-container/popup__zoom-container.css);
 @import url(../blocks/popup/__zoom-image-text/popup__zoom-image-text.css);
-@import url(../blocks/popup/_zoom/popup_zoom.css);
 /*card-popup*/
 @import url(../blocks/card-popup/card-popup.css);
 /*profile-popup*/
