@@ -19,7 +19,12 @@
 @import url(../blocks/popup/__zoom-container/popup__zoom-container.css);
 @import url(../blocks/popup/__zoom-image-text/popup__zoom-image-text.css);
 @import url(../blocks/popup/_zoom/popup_zoom.css);
-@import url(../blocks/popup/_opacity/popup_opacity.css);
+/*card-popup*/
+@import url(../blocks/card-popup/card-popup.css);
+/*profile-popup*/
+@import url(../blocks/profile-popup/profile-popup.css);
+/*zoom-popup*/
+@import url(../blocks/zoom-popup/zoom-popup.css);
 /*cards*/
 @import url(../blocks/cards/cards.css);
 /*card*/

@@ -66,7 +66,7 @@ const initialCards = [
 ];
 
 // открытие попапа для карточек
-const openAddCardPopup = document.querySelector(".popup_add-card"); //открытие попапа для карточек
+const openAddCardPopup = document.querySelector(".card-popup"); //открытие попапа для карточек
 const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
 
 const openAddCardPopupFunction = () => {
@@ -117,7 +117,7 @@ const createNewCard = (element) => {
 };
 
 // открытие полномаштабной картинки
-const openZoomPopup = document.querySelector(".popup_zoom"); // попап для полномаштабной картинки
+const openZoomPopup = document.querySelector(".zoom-popup"); // попап для полномаштабной картинки
 
 const handleOpenZoomCard = (event) => {
   const popupZoomPhoto = document.querySelector(".popup__zoom-image");
