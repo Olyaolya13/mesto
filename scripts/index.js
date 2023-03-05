@@ -111,6 +111,7 @@ const namePopupZoomPhotoText = document.querySelector(
 );
 const handleOpenZoomCard = (event) => {
   popupZoomPhoto.src = event.target.src; // передаем в попап картинки значение src
+  popupZoomPhoto.atl = event.target.alt;
   namePopupZoomPhotoText.textContent = event.target.alt; // передаем в попап картинки значение alt
   openPopup(openZoomPopup);
 };
