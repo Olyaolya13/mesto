@@ -70,57 +70,37 @@ const initialCards = [
 // открытие попапа для карточек
 const openAddCardPopup = document.querySelector(".card-popup"); //открытие попапа для карточек
 const addCardButtonEditPopup = document.querySelector(".content__button-add"); //кнопка для открытия попапа для карточек
-
 const openAddCardPopupFunction = () => {
   openPopup(openAddCardPopup);
   formElementCard.reset(); // удаление данных из формы
 };
-addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction); // открытие кнопки для добавления карточек
+addCardButtonEditPopup.addEventListener("click", openAddCardPopupFunction);
+
+// закрытие всех попапов на крестик
+const closeButtons = document.querySelectorAll(".popup__close-icon");
+closeButtons.forEach((button) => {
+  // находим 1 раз ближайший к крестику попап
+  const popup = button.closest(".popup");
+  // устанавливаем обработчик закрытия на крестик
+  button.addEventListener("click", () => closePopup(popup));
+});
 
 const cardsSection = document.querySelector(".cards"); // переменная секции карточки
 const formElementCard = document.querySelector(".popup__form-card"); //форма попапа для карточки
-
-// функция для создания карточек, их перебора массива
-const createNewCard = (element) => {
-  const cardTemplate = document
-    .getElementById("card-template")
-    .content.cloneNode(true); //получаем содержимое template через content и клонируем
-  cardTemplate.querySelector(".card__title").textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
-  cardTemplate.querySelector(".card__image").setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
-  cardTemplate.querySelector(".card__image").setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
-  // действие для удаления карточкек
-  cardTemplate
-    .querySelector(".card__delete")
-    .addEventListener("click", handleRemoveCardClick);
-  // действие для лайка карточкек
-  cardTemplate
-    .querySelector(".card__heart")
-    .addEventListener("click", handleclickHeartButtonActive);
-  // открытие полномаштабной картинки
-  cardTemplate
-    .querySelector(".card__image")
-    .addEventListener("click", handleOpenZoomCard);
-  cardsSection.prepend(cardTemplate); // добавление карточек вначале секции cards
-};
-
-// открытие полномаштабной картинки
+const cardTemplate = document.getElementById("card-template").content; //получаем содержимое template через content
+const cardImage = cardTemplate.querySelector(".card__image");
 const openZoomPopup = document.querySelector(".zoom-popup"); // попап для полномаштабной картинки
 const popupZoomPhoto = document.querySelector(".popup__zoom-image");
 const namePopupZoomPhotoText = document.querySelector(
   ".popup__zoom-image-text"
 );
-const handleOpenZoomCard = (event) => {
-  popupZoomPhoto.src = event.target.src; // передаем в попап картинки значение src
-  popupZoomPhoto.atl = event.target.alt;
-  namePopupZoomPhotoText.textContent = event.target.alt; // передаем в попап картинки значение alt
-  openPopup(openZoomPopup);
-};
 
 // удаление карточки
 const handleRemoveCardClick = (event) => {
   const clickButton = event.target; // ссылаемся на событие для кнопки
   const deleteCard = clickButton.closest(".card"); // ищем на стр класс card
   deleteCard.remove(); // удаляем класс
+  console.log("");
 };
 
 // лайк для карточек
@@ -134,30 +114,57 @@ const handleclickHeartButtonActive = (event) => {
     clickHeartButton.classList.add("card__heart");
   }
 };
-initialCards.forEach(createNewCard);
+
+// открытие полномаштабной картинки
+const handleOpenZoomCard = (event) => {
+  popupZoomPhoto.src = event.target.src; // передаем в попап картинки значение src
+  popupZoomPhoto.atl = event.target.alt;
+  namePopupZoomPhotoText.textContent = event.target.alt; // передаем в попап картинки значение alt
+  openPopup(openZoomPopup);
+};
+
+//для создания карточек
+const createNewCard = (element) => {
+  newCard = cardTemplate.cloneNode(true);
+  newCard.querySelector(".card__title").textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
+  newCard.querySelector(".card__image").setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
+  newCard.querySelector(".card__image").setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
+  newCard
+    .querySelector(".card__delete")
+    .addEventListener("click", handleRemoveCardClick);
+  newCard
+    .querySelector(".card__heart")
+    .addEventListener("click", handleclickHeartButtonActive);
+  newCard
+    .querySelector(".card__image")
+    .addEventListener("click", handleOpenZoomCard);
+  return newCard;
+};
+
+// помещаем новую карточку в верстку
+const renderCard = (card) => {
+  const cardNew = createNewCard(card); // создаем новую карточку
+  cardsSection.prepend(cardNew); // помещаем в секцию для карточек
+};
+
+initialCards.forEach((item) => {
+  renderCard(item);
+});
+
 // добавление новых карточек
 const linkAddCard = document.querySelector(".popup__card-link"); // изображение в карточке
 const nameAddCard = document.querySelector(".popup__card-name"); // название карточки
-
 const handleAddNewCardClick = (event) => {
   event.preventDefault();
-  image = linkAddCard.value;
   title = nameAddCard.value;
-  const newCard = {
+  image = linkAddCard.value;
+  const newCardAdd = {
     name: title,
-    alt: title,
-    link: image,
+    alt: nameAddCard.value,
+    link: linkAddCard.value,
   };
-  createNewCard(newCard);
-  closePopup(openAddCardPopup); //вызвали повтороно функцию закрытия попапа
+
+  renderCard(newCardAdd);
+  closePopup(openAddCardPopup); //закрытие попапа
 };
 formElementCard.addEventListener("submit", handleAddNewCardClick);
-
-const closeButtons = document.querySelectorAll(".popup__close-icon"); // закрытие попапов на крестик
-
-closeButtons.forEach((button) => {
-  // находим 1 раз ближайший к крестику попап
-  const popup = button.closest(".popup");
-  // устанавливаем обработчик закрытия на крестик
-  button.addEventListener("click", () => closePopup(popup));
-});
