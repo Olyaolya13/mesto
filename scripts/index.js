@@ -88,7 +88,6 @@ closeButtons.forEach((button) => {
 const cardsSection = document.querySelector(".cards"); // переменная секции карточки
 const formElementCard = document.querySelector(".popup__form-card"); //форма попапа для карточки
 const cardTemplate = document.getElementById("card-template").content; //получаем содержимое template через content
-const cardImage = cardTemplate.querySelector(".card__image");
 const openZoomPopup = document.querySelector(".zoom-popup"); // попап для полномаштабной картинки
 const popupZoomPhoto = document.querySelector(".popup__zoom-image");
 const namePopupZoomPhotoText = document.querySelector(
@@ -102,6 +101,7 @@ const handleRemoveCardClick = (event) => {
   deleteCard.remove(); // удаляем класс
   console.log("");
 };
+const heart = cardTemplate.querySelector(".card__heart");
 
 // лайк для карточек
 const handleclickHeartButtonActive = (event) => {
@@ -124,11 +124,12 @@ const handleOpenZoomCard = (event) => {
 
 //для создания карточек
 const createNewCard = (element) => {
-  newCard = cardTemplate.cloneNode(true);
-  const cardTitle = newCard.querySelector(".card__title");
-  const cardImage = newCard.querySelector(".card__image");
-  const cardDelete = newCard.querySelector(".card__delete");
-  const cardHeart = newCard.querySelector(".card__heart");
+  const newCard = cardTemplate.cloneNode(true);
+  let cardTitle = newCard.querySelector(".card__title");
+  let cardImage = newCard.querySelector(".card__image");
+  let cardDelete = newCard.querySelector(".card__delete");
+  let cardHeart = newCard.querySelector(".card__heart");
+  cardTemplate.cloneNode(true);
   cardTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
   cardImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
   cardImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
@@ -153,12 +154,12 @@ const linkAddCard = document.querySelector(".popup__card-link"); // изобра
 const nameAddCard = document.querySelector(".popup__card-name"); // название карточки
 const handleAddNewCardClick = (event) => {
   event.preventDefault();
-  title = nameAddCard.value;
-  image = linkAddCard.value;
+  const title = nameAddCard.value;
+  const image = linkAddCard.value;
   const newCardAdd = {
     name: title,
-    alt: nameAddCard.value,
-    link: linkAddCard.value,
+    alt: image,
+    link: image,
   };
 
   renderCard(newCardAdd);
