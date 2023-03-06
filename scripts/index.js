@@ -37,33 +37,33 @@ const initialCards = [
   {
     name: "Япония",
     link: "https://images.unsplash.com/photo-1677350787420-d3309b8a1eb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
-    alt: "Стрит арт Япония",
+    alt: "Стрит арт Японии, граффити дьявола с рогами, длинным языком и безумными глазами на красном фоне, изображенный на фасаде дома.",
   },
   {
     name: "Великобритания",
     link: "https://images.unsplash.com/photo-1517776832751-0a7e6993de03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-    alt: "Стрит арт Великобритания",
+    alt: "Стрит арт Великобритании, несколько тегов синих, желтых и розовых цветов, пару стикеров и белая голова мужчины на черном фоне",
   },
   {
     name: "Германия",
     link: "https://images.unsplash.com/photo-1487452066049-a710f7296400?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80",
-    alt: "Стрит арт Германия",
+    alt: "Стрит арт Германия, большие надписи в стиле бабл в подземном переходе с розовым светом.",
   },
   {
     name: "Австралия",
     link: "https://images.unsplash.com/photo-1530406831759-15c5c0cbce8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80",
-    alt: "Стрит арт Австралия",
+    alt: "Стрит арт Австралия, много красочных тегов и бьольшое зеленое дерево, держащее импровизированное сердце в виде мозга в узком переулке на фоне мусорки.",
   },
 
   {
     name: "США",
     link: "https://images.unsplash.com/photo-1538591342826-9ad43007c016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=954&q=80",
-    alt: "Стрит арт США",
+    alt: "Стрит арт США, красочное граффити тревожного мужчины с летающей шляпой в стиле кубизм.",
   },
   {
     name: "Бельгия",
     link: "https://images.unsplash.com/photo-1564385479952-4cc4a28234a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
-    alt: "Стрит арт Бельгия",
+    alt: "Стрит арт Бельгия, рыжее граффити с надписью и щупальцами осьминога на темно-зеленом фоне в подземном переходе.",
   },
 ];
 
@@ -118,7 +118,6 @@ const handleclickHeartButtonActive = (event) => {
 // открытие полномаштабной картинки
 const handleOpenZoomCard = (event) => {
   popupZoomPhoto.src = event.target.src; // передаем в попап картинки значение src
-  popupZoomPhoto.atl = event.target.alt;
   namePopupZoomPhotoText.textContent = event.target.alt; // передаем в попап картинки значение alt
   openPopup(openZoomPopup);
 };
@@ -126,18 +125,16 @@ const handleOpenZoomCard = (event) => {
 //для создания карточек
 const createNewCard = (element) => {
   newCard = cardTemplate.cloneNode(true);
-  newCard.querySelector(".card__title").textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
-  newCard.querySelector(".card__image").setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
-  newCard.querySelector(".card__image").setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
-  newCard
-    .querySelector(".card__delete")
-    .addEventListener("click", handleRemoveCardClick);
-  newCard
-    .querySelector(".card__heart")
-    .addEventListener("click", handleclickHeartButtonActive);
-  newCard
-    .querySelector(".card__image")
-    .addEventListener("click", handleOpenZoomCard);
+  const cardTitle = newCard.querySelector(".card__title");
+  const cardImage = newCard.querySelector(".card__image");
+  const cardDelete = newCard.querySelector(".card__delete");
+  const cardHeart = newCard.querySelector(".card__heart");
+  cardTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
+  cardImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
+  cardImage.setAttribute("alt", element.alt); // выводим alt через setAttribute обращаясь к alt в массиве
+  cardDelete.addEventListener("click", handleRemoveCardClick);
+  cardHeart.addEventListener("click", handleclickHeartButtonActive);
+  cardImage.addEventListener("click", handleOpenZoomCard);
   return newCard;
 };
 
