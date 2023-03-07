@@ -118,7 +118,9 @@ const handleclickHeartButtonActive = (event) => {
 // открытие полномаштабной картинки
 const handleOpenZoomCard = (event) => {
   popupZoomPhoto.src = event.target.src; // передаем в попап картинки значение src
+  popupZoomPhoto.alt = event.target.alt;
   namePopupZoomPhotoText.textContent = event.target.alt; // передаем в попап картинки значение alt
+  console.log(popupZoomPhoto.alt);
   openPopup(openZoomPopup);
 };
 
@@ -158,7 +160,7 @@ const handleAddNewCardClick = (event) => {
   const image = linkAddCard.value;
   const newCardAdd = {
     name: title,
-    alt: image,
+    alt: title,
     link: image,
   };
 
