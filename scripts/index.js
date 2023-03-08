@@ -127,10 +127,10 @@ const handleOpenZoomCard = (event) => {
 //для создания карточек
 const createNewCard = (element) => {
   const newCard = cardTemplate.cloneNode(true);
-  let cardTitle = newCard.querySelector(".card__title");
-  let cardImage = newCard.querySelector(".card__image");
-  let cardDelete = newCard.querySelector(".card__delete");
-  let cardHeart = newCard.querySelector(".card__heart");
+  const cardTitle = newCard.querySelector(".card__title");
+  const cardImage = newCard.querySelector(".card__image");
+  const cardDelete = newCard.querySelector(".card__delete");
+  const cardHeart = newCard.querySelector(".card__heart");
   cardTemplate.cloneNode(true);
   cardTitle.textContent = element.name; // выводим текст через textContent обращаясь к name  в массиве
   cardImage.setAttribute("src", element.link); // выводим картинку через setAttribute обращаясь к link в массиве
